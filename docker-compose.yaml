@@ -1,20 +1,20 @@
-version: "3.8"
-name: "docker-lamp"
+version: '3.8'
+name: 'docker-lamp'
 services:
   apache:
-    build: "./.docker/apache/"
+    build: './.docker/apache/'
     depends_on:
       - php
     ports:
-      - "1111:80"
+      - '1111:80'
     volumes:
-      - ./src/:/var/www/html/
+      - ./src/gw1_jvm/dist/:/var/www/html/
 
   php:
     build: ./.docker/php
     working_dir: /var/www/html
     volumes:
-      - ./src:/var/www/html
+      - ./src/gw1_jvm/dist/:/var/www/html/
     depends_on:
       - db
 

@@ -1,0 +1,75 @@
+@import url("./reset.css");
+@import url("./icons.css");
+@import url("./header.css");
+@import url("./footer.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+:root {
+  font-size: 62.5%;
+  --soft-orange: hsl(35, 77%, 62%);
+  --color-bg-body: #f4f5f6;
+  --color-text-body: #070a0d;
+  --color-bg-primary: #041e42;
+  --color-text-primary: #cdd2d9;
+  --color-emphasis-primary: #ffffff;
+  --color-bg-footer: #333333;
+  --color-text-footer: #ffffff;
+  --color-bg-secondary: #ffffff;
+  --color-emphasis-secondary: #070a0d;
+  --color-text-secondary: #474c4c;
+  --color-accent: #057aff;
+
+  --success: #198754;
+  --success-bg-subtle: #d1e7dd;
+  --success-border-subtle: #a3cfbb;
+  --success-text-emphasis: #0a3622;
+  --danger: #dc3545;
+  --danger-bg-subtle: #f8d7da;
+  --danger-border-subtle: #f8d7da;
+  --danger-text-emphasis: #58151c;
+  --warning: #ffc107;
+  --warning-bg-subtle: #fff3cd;
+  --warning-border-subtle: #ffe69c;
+  --warning-text-emphasis: #664d03;
+  --info: #0dcaf0;
+  --info-bg-subtle: #cff4fc;
+  --info-border-subtle: #9eeaf9;
+  --info-text-emphasis: #055160;
+  --main-fontsize: 1.6rem;
+  --title-fontsize: 3.5rem;
+  --secondary-fontsize: 1.4rem;
+  --secondary-brightness: 0.8;
+  --headings-fontsize: 2rem;
+  --fontsize-large-heading: 3rem;
+  --footer-height: 50px;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg-body);
+  color: var(--color-text-body);
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding-top: var(--header-height);
+  padding-bottom: var(--footer-height);
+  font-size: var(--main-fontsize);
+  .container {
+    width: 90vw;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+}
+
+p {
+  line-height: normal;
+}

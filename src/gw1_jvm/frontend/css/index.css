@@ -1,0 +1,195 @@
+@import url("./style.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 2rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-bg-primary);
+  color: var(--color-emphasis-primary);
+  border-radius: 2rem;
+  position: relative;
+  > div {
+    display: contents;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  * {
+    margin-bottom: 1rem;
+  }
+  label {
+    filter: brightness(var(--secondary-brightness));
+    font-size: var(--secondary-fontsize);
+  }
+  select,
+  option,
+  input {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    background-color: var(--color-emphasis-primary);
+    text-align: center;
+  }
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
+  input[type="range"] {
+    cursor: pointer;
+  }
+  button {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    border-radius: 1rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--color-emphasis-primary);
+      background-color: var(--color-accent);
+    }
+  }
+
+  #advanced-search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    .toggleSortDirection {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    overflow: hidden;
+    max-height: 0;
+  }
+  .advanced-search-toggle {
+    position: absolute;
+    right: 2rem;
+    bottom: 0rem;
+    padding: 2rem;
+    cursor: pointer;
+    &:hover {
+      color: #bf0d3e;
+    }
+  }
+
+  &.expanded {
+    #advanced-search {
+      max-height: 300px;
+    }
+    .advanced-search-toggle {
+      rotate: 180deg;
+    }
+  }
+}
+
+.club-container {
+  margin: 0 auto;
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+    a:has(article) {
+      display: block;
+    }
+    article {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      border: 5px solid #fff;
+      border-radius: 2rem;
+      transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+      }
+      div:has(img) {
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        padding: 2rem;
+        margin: auto 0;
+        img {
+          height: 100%;
+          width: 100%;
+          display: block;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+      .content {
+        background-color: var(--color-bg-primary);
+        color: var(--color-emphasis-primary);
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+        h2 {
+          font-weight: bold;
+          font-size: var(--headings-fontsize);
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: var(--secondary-fontsize);
+          height: fit-content;
+          &:nth-child(2) {
+            font-style: italic;
+            filter: brightness(var(--secondary-brightness));
+          }
+          &:nth-child(3) {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    align-items: center;
+    margin: 5rem 0;
+    gap: 1rem;
+    a,
+    p {
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      color: var(--color-emphasis-primary);
+      background-color: var(--color-bg-primary);
+    }
+    a:hover,
+    a.active {
+      background-color: var(--color-accent);
+    }
+    a.active:hover {
+      background-color: var(--color-bg-primary);
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .club-container {
+    section {
+      max-width: 100%;
+    }
+  }
+  form {
+    max-width: 90%;
+  }
+}

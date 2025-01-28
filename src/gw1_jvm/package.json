@@ -1,0 +1,25 @@
+{
+  "name": "gw1_jvm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vite.config.js",
+  "type": "module",
+  "scripts": {
+    "install:npm": "npm install",
+    "install:php": "composer install",
+    "install": "npm run install:npm && npm run install:php",
+    "start": "npm run dev",
+    "dev": "vite --open frontend/ --host --config vite.config-with-php.js",
+    "dev:admin": "vite --open admin/ --host --config vite.config-with-php.js",
+    "dev:reuse": "vite --host --config vite.config-with-php.js",
+    "build": "vite build --config vite.config-with-php.js",
+    "preview": "bash -c \"export INCLUDE_PATH=$(realpath dist/) && php -S localhost:8080 -t dist/ -d include_path=$INCLUDE_PATH\""
+  },
+  "author": "Joppe, Vincent, Mattias",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.0.5",
+    "vite-plugin-php": "^1.0.67",
+    "vite-plugin-static-copy": "^2.2.0"
+  }
+}

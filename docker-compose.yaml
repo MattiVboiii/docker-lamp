@@ -8,13 +8,13 @@ services:
     ports:
       - '1111:80'
     volumes:
-      - ./src/gw1_jvm/dist/:/var/www/html/
+      - ./src/:/var/www/html/
 
   php:
     build: ./.docker/php
     working_dir: /var/www/html
     volumes:
-      - ./src/gw1_jvm/dist/:/var/www/html/
+      - ./src:/var/www/html
     depends_on:
       - db
 
